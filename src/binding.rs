@@ -6,6 +6,6 @@ use keyberon::action::Action;
 
 pub trait Binding {
 
-    /// Onになっているpinのアクションをスライスで返す
-    fn to_action(&self, pins: &[bool]) -> &[Action];
+    /// OnになっているpinのアクションあるいはNoneをスライスで返す
+    fn to_action(&self, pins: &[bool]) -> &[Option<Action>];
 }

@@ -5,7 +5,6 @@
 mod scanner;
 mod device;
 mod talker;
-mod modulo;
 mod devices;
 mod binding;
 mod keyboard;

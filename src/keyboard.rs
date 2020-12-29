@@ -17,7 +17,10 @@ impl Keyboard {
     pub fn scan(&self) {
         let pins = self.scanner.scan();
         for a in self.binding.to_action(pins).iter() {
-            self.talker.push(a)
+            match a {
+                Some(action) => self.talker.push(a),
+                None => {}
+            }
         }
     }
 }
