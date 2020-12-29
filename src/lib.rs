@@ -1,3 +1,15 @@
+// Copyright 2020 Kazuyuki HIDA <kazhida@abplus.com>
+// All right reserved.
+//
+
+mod scanner;
+mod device;
+mod talker;
+mod modulo;
+mod devices;
+mod binding;
+mod keyboard;
+
 #[cfg(test)]
 mod tests {
     #[test]
