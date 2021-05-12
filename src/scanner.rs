@@ -3,10 +3,9 @@
 //
 
 use crate::device::Device;
-use crate::talker::Talker;
 
 /// deviceを使用して、キーの状態をスキャンするもの
-pub trait Scanner {
+pub trait Scanner<R, C> {
 
     fn devices(&self) -> &[dyn Device];
 
@@ -15,7 +14,7 @@ pub trait Scanner {
         let mut offset = 0;
         let size = self.devices().iter().fold(0: usize, |a, d| a + d.pin_count());
         let buffer = Vec::<bool>::with_capacity(size).as_mut_slice();
-        for dev in self.devices().iter() {
+        for (i, dev) in self.devices().iter() {
             let count = dev.pin_count();
             let tail = offset + count;
             let pins = &buffer[offset..tail];

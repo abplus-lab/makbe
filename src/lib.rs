@@ -4,15 +4,4 @@
 
 mod scanner;
 mod device;
-mod talker;
 mod devices;
-mod binding;
-mod keyboard;
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
-}

@@ -8,3 +8,5 @@ edition = "2018"
 
 [dependencies]
 keyberon = "0.1.0"
+heapless = "0.5"
+embedded-hal = "0.2"

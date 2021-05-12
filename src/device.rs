@@ -2,12 +2,11 @@
 // All right reserved.
 //
 
-/// I2Cにぶら下がったデバイス（大抵の場合、I/Oエキスパンダ）
+
+use embedded_hal::blocking::i2c::{Write, WriteRead};
+use std::cell::RefCell;
+
 pub trait Device {
-
-    /// 扱うPIN数を返す
-    fn pin_count(&self) -> usize;
-
-    /// PINの状態を読み込んで、pinsスライスを更新する
-    fn read_pins<T>(&self, mut pins: &[bool] );
+    fn init_pins(&self, i2cm: &RefCell<dyn Write>) -> Result<(), Write::Error>;
+    fn read_pins(&mut self, i2cm: &RefCell<dyn WriteRead>) -> Result<&[bool], WriteRead::Error>;
 }
