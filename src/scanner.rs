@@ -10,6 +10,7 @@ pub trait Scanner<R, C> {
     fn devices(&self) -> &[dyn Device];
 
     /// 全体のキーをスキャンして、その状態（押されていればtrue）を返す
+    /// deviceの意味が変わっちゃったからこれは没
     fn scan(&self) -> &[bool] {
         let mut offset = 0;
         let size = self.devices().iter().fold(0: usize, |a, d| a + d.pin_count());

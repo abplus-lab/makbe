@@ -26,7 +26,7 @@ impl Device for TCA9555 {
         let mut data = &[0x00u8, 0x00u8];
         i2cm.write_read(self.dev_addr, reg_addr, data)?;
 
-
+        // todo: registerにboolの配列として格納する
 
         Ok(&self.register)
     }

@@ -4,3 +4,4 @@
 
 mod tca9555;
 mod tca9554;
+mod switch;
