@@ -5,3 +5,4 @@
 mod scanner;
 mod device;
 mod devices;
+mod switch;
